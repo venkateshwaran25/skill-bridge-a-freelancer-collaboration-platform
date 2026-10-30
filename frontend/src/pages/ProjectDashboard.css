@@ -1,0 +1,504 @@
+.project-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40px 20px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-header {
+  max-width: 1300px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dashboard-header h1 {
+  font-size: 2em;
+  color: #333;
+  margin: 0;
+}
+
+.btn-generate-report {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-generate-report:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-generate-report:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.dashboard-grid {
+  max-width: 1300px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.stat-card {
+  border-radius: 12px;
+  padding: 30px;
+  color: white;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.stat-icon {
+  font-size: 3em;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-title {
+  font-size: 0.9em;
+  opacity: 0.9;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.stat-trend {
+  font-size: 0.85em;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.dashboard-sections {
+  max-width: 1300px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 25px;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 5px solid #667eea;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card h2 {
+  font-size: 1.3em;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Task Overview */
+.task-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.task-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.task-status-row:hover {
+  background: #eff2f7;
+  transform: translateX(5px);
+}
+
+.task-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.task-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+}
+
+.task-count {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.overview-stats {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.overview-stats p {
+  margin: 8px 0;
+  color: #666;
+  font-size: 0.95em;
+}
+
+.overview-stats strong {
+  color: #333;
+}
+
+/* Milestone Overview */
+.milestone-overview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.milestone-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.milestone-indicator {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.milestone-info {
+  flex: 1;
+}
+
+.milestone-status {
+  font-size: 0.85em;
+  color: #999;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.milestone-count {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #333;
+  margin: 5px 0 0 0;
+}
+
+.milestone-note {
+  color: #999;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+/* Risk Assessment */
+.risk-assessment {
+  display: flex;
+  gap: 20px;
+  align-items: start;
+}
+
+.risk-indicator {
+  padding: 20px 30px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3em;
+  text-align: center;
+  min-width: 120px;
+  white-space: nowrap;
+}
+
+.risk-indicator.risk-low {
+  background: linear-gradient(135deg, #51cf66 0%, #37b24d 100%);
+}
+
+.risk-indicator.risk-medium {
+  background: linear-gradient(135deg, #ffa502 0%, #ff922b 100%);
+}
+
+.risk-indicator.risk-high {
+  background: linear-gradient(135deg, #ff6b6b 0%, #fa5252 100%);
+}
+
+.risk-details {
+  flex: 1;
+}
+
+.risk-details p {
+  margin: 10px 0;
+  color: #666;
+  font-size: 0.95em;
+}
+
+/* Team Performance */
+.team-performance {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top-performer-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.top-performer-badge .label {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  opacity: 0.9;
+}
+
+.top-performer-badge .performer-tasks {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.team-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.metric-display {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.metric-display .metric-label {
+  color: #999;
+  font-size: 0.85em;
+  margin-bottom: 8px;
+}
+
+.metric-display .metric-value {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Budget Tracking */
+.budget-tracking {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.budget-bar {
+  width: 100%;
+  height: 25px;
+  background: #e9ecef;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.budget-used {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.budget-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.budget-stats p {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0;
+  color: #666;
+}
+
+.budget-stats strong {
+  color: #333;
+  font-size: 1.1em;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.budget-percentage {
+  text-align: center;
+  color: #999;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+/* Dashboard Actions */
+.dashboard-actions {
+  max-width: 1300px;
+  margin: 40px auto 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+/* States */
+.loading,
+.error {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1.2em;
+  color: #666;
+}
+
+.error {
+  background: #ffe0e0;
+  color: #c92a2a;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .milestone-overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.5em;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stat-content {
+    text-align: center;
+  }
+
+  .milestone-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .risk-assessment {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .risk-indicator {
+    min-width: auto;
+  }
+
+  .team-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .budget-stats {
+    grid-template-columns: 1fr;
+  }
+}
